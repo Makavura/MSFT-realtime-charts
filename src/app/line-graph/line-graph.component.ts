@@ -56,6 +56,10 @@ export class LineGraphComponent implements OnInit {
         this.stockOpen.push(stockData[item]['4. close']);
         }
 
+        console.log(this.dateInterval);
+        console.log(this.stockClose);
+        console.log(this.stockOpen)
+
 
       }
       );
