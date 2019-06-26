@@ -12,12 +12,15 @@ export class LineGraphComponent implements OnInit {
   stockClose: number[] = [];
   dateInterval: string[] = [];
   public lineChartData = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-    { data: [330, 600, 260, 700, 250, 300, 590],  label: 'Account A' },
-    { data: [120, 455, 100, 340, 170, 369, 288], label: 'Account B' },
-    { data: [45, 67, 800, 500, 2, 909, 456], label: 'Account C' }
+    { data: this.stockOpen, label: 'Open'},
+    { data: this.stockClose, label: 'Close'}
+    // { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
+    // { data: [330, 600, 260, 700, 250, 300, 590],  label: 'Account A' },
+    // { data: [120, 455, 100, 340, 170, 369, 288], label: 'Account B' },
+    // { data: [45, 67, 800, 500, 2, 909, 456], label: 'Account C' }
   ];
-  public lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  // public lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  public lineChartLabels = this.dateInterval;
   public lineChartColors = [
     {
       borderColor: 'rgb(255, 10, 10)',
