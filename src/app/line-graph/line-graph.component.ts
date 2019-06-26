@@ -53,18 +53,18 @@ export class LineGraphComponent implements OnInit {
       // tslint:disable-next-line: forin 
       for (const item in stockData) {
         i++;
-        console.log(i);
         if ( i <= 10) {
         this.dateInterval.push(item);
-        this.stockOpen.push(stockData[item]['1. open']);
-        this.stockOpen.push(stockData[item]['4. close']);
-        break;
+        this.stockOpen.push(Number(stockData[item]['1. open']));
+        this.stockClose.push(Number(stockData[item]['4. close']));
+        // break;
       }
       }
 
-        // console.log(this.dateInterval);
-        // console.log(this.stockClose);
-        // console.log(this.stockOpen)
+      console.log(this.dateInterval);
+      console.log(this.stockClose);
+      console.log(this.stockOpen);
+      console.log(this.lineChartData);
 
 
       }
