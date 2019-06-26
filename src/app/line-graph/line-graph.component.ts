@@ -20,7 +20,7 @@ export class LineGraphComponent implements OnInit {
     // { data: [45, 67, 800, 500, 2, 909, 456], label: 'Account C' }
   ];
   // public lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  public lineChartLabels = this.dateInterval;
+  public lineChartLabels = [];
   public lineChartColors = [
     {
       borderColor: 'rgb(255, 10, 10)',
@@ -58,6 +58,11 @@ export class LineGraphComponent implements OnInit {
         this.stockOpen.push(Number(stockData[item]['1. open']));
         this.stockClose.push(Number(stockData[item]['4. close']));
         // break;
+      } else if ( i === 11 ) {
+        this.lineChartLabels = this.dateInterval;
+
+      } else {
+        continue;
       }
       }
 
