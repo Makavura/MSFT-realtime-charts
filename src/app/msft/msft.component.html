@@ -1,3 +1,15 @@
-<p>
-  msft works!
-</p>
+<div class = "container-fluid">
+  <div class = "row">
+    <div style="display: block;">
+      <canvas baseChart width="1700" height="700"
+        [datasets]="lineChartData"
+        [labels]="lineChartLabels"
+        [options]="lineChartOptions"
+        [colors]="lineChartColors"
+        [legend]="lineChartLegend"
+        [chartType]="lineChartType"
+        [plugins]="lineChartPlugins">
+      </canvas>
+    </div>
+  </div>
+</div>
