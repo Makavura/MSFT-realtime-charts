@@ -17,7 +17,6 @@ import { MsftComponent } from './msft/msft.component';
     AppComponent,
     LineGraphComponent,
     GooglComponent,
-    TeslaComponent,
     TslaComponent,
     AmznComponent,
     MsftComponent
