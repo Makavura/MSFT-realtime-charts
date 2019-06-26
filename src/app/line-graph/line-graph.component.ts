@@ -8,9 +8,9 @@ import { StockService } from '../_services/stock.service';
 })
 export class LineGraphComponent implements OnInit {
 
-  stockOpen: number[];
-  stockClose: number[];
-  dateInterval: string[];
+  stockOpen: number[] = [];
+  stockClose: number[] = [];
+  dateInterval: string[] = [];
   public lineChartData = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
     { data: [330, 600, 260, 700, 250, 300, 590],  label: 'Account A' },
@@ -46,9 +46,16 @@ export class LineGraphComponent implements OnInit {
     let stockData = [];
     this.stockService.getMSFT().subscribe( data => {
       stockData = data['Monthly Time Series'];
-      // console.log(data);
-      console.log(stockData);
-    });
+      // tslint:disable-next-line: forin 
+      for(const item in stockData) {
+        this.dateInterval.push(item);
+        this.stockOpen.push(stockData[item]['1. open']);
+        this.stockOpen.push(stockData[item]['4. close']);
+        }
+
+
+      }
+      );
 
   }
 }
