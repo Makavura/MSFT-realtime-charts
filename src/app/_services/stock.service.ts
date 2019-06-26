@@ -13,4 +13,13 @@ export class StockService {
   getMSFT() {
      return this.http.get(appConfig.MSFT);
   }
+  getGOOGL() {
+    return this.http.get(appConfig.GOOGL);
+ }
+ getTSLA() {
+  return this.http.get(appConfig.TSLA);
+}
+getAMZN() {
+  return this.http.get(appConfig.AMZN);
+}
 }
