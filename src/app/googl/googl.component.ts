@@ -47,7 +47,7 @@ export class GooglComponent implements OnInit {
 
   getStockData() {
     let stockData = [];
-    this.stockService.getMSFT().subscribe( data => {
+    this.stockService.getGOOGL().subscribe( data => {
       stockData = data['Monthly Time Series'];
       // tslint:disable-next-line: forin 
       for (const item in stockData) {
