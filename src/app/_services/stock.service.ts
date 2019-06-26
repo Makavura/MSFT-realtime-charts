@@ -15,11 +15,11 @@ export class StockService {
   }
   getGOOGL() {
     return this.http.get(appConfig.GOOGL);
- }
- getTSLA() {
-  return this.http.get(appConfig.TSLA);
-}
-getAMZN() {
-  return this.http.get(appConfig.AMZN);
-}
+  }
+  getTSLA() {
+    return this.http.get(appConfig.TSLA);
+  }
+  getAMZN() {
+    return this.http.get(appConfig.AMZN);
+  }
 }
