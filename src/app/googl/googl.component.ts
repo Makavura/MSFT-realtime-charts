@@ -7,7 +7,7 @@ import { StockService } from '../_services/stock.service';
   styleUrls: ['./googl.component.css']
 })
 export class GooglComponent implements OnInit {
-
+  public metaData = {};
   stockOpen: number[] = [];
   stockClose: number[] = [];
   dateInterval: string[] = [];
@@ -49,6 +49,7 @@ export class GooglComponent implements OnInit {
     let stockData = [];
     this.stockService.getGOOGL().subscribe( data => {
       stockData = data['Monthly Time Series'];
+      this.metaData = data['Meta Data'];
       // tslint:disable-next-line: forin 
       for (const item in stockData) {
         this.dateInterval.push(item);
