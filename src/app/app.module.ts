@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { LineGraphComponent } from './line-graph/line-graph.component';
 import { StockService} from './_services/stock.service';
 import { GooglComponent } from './googl/googl.component';
-import { TeslaComponent } from './tesla/tesla.component';
 import { TslaComponent } from './tsla/tsla.component';
 import { AmznComponent } from './amzn/amzn.component';
 import { MsftComponent } from './msft/msft.component';
