@@ -47,14 +47,18 @@ export class LineGraphComponent implements OnInit {
 
   getStockData() {
     let stockData = [];
+    let i = 0;
     this.stockService.getMSFT().subscribe( data => {
       stockData = data['Monthly Time Series'];
       // tslint:disable-next-line: forin 
-      for(const item in stockData) {
+      for (const item in stockData) {
+        i += 1;
+        if ( i === 50) {
         this.dateInterval.push(item);
         this.stockOpen.push(stockData[item]['1. open']);
         this.stockOpen.push(stockData[item]['4. close']);
         }
+      }
 
         console.log(this.dateInterval);
         console.log(this.stockClose);
