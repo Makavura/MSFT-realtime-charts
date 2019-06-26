@@ -1,21 +1,12 @@
 
 <div class = "container-fluid">
   <div class = "row">
-    <div style="display: block;">
-      <canvas baseChart width="1700" height="700"
-        [datasets]="lineChartData"
-        [labels]="lineChartLabels"
-        [options]="lineChartOptions"
-        [colors]="lineChartColors"
-        [legend]="lineChartLegend"
-        [chartType]="lineChartType"
-        [plugins]="lineChartPlugins">
-      </canvas>
-    </div>
+    
+    <app-amzn></app-amzn>
+    <app-tsla></app-tsla>
+    <app-msft></app-msft>
+    <app-googl></app-googl>
+
   </div>
 </div>
 
-<!-- https://www.chartjs.org/docs/latest/charts/line.html -->
-<!-- https://alligator.io/angular/chartjs-ng2-charts/ -->
-<!-- https://getbootstrap.com/docs/4.3/components/navbar/ -->
-<!-- https://www.npmjs.com/package/ng4-charts -->
