@@ -33,6 +33,7 @@ export class MsftComponent implements OnInit {
   public lineChartLegend = true;
   public lineChartType = 'line';
   public lineChartPlugins = [];
+  public loadingCharts: boolean;
 
   constructor(public stockService: StockService) { }
 
@@ -42,24 +43,25 @@ export class MsftComponent implements OnInit {
 
   getStockData() {
     let stockData = [];
-    // this.stockService.getMSFT().subscribe( data => {
-    //   stockData = data['Monthly Time Series'];
-    //   this.metaData = data['Meta Data'];
-    //   // tslint:disable-next-line: forin 
-    //   for (const item in stockData) {
-    //     this.dateInterval.push(item);
-    //     this.stockOpen.push(Number(stockData[item]['1. open']));
-    //     this.stockClose.push(Number(stockData[item]['4. close']));
-    //   }
-    //   this.lineChartLabels = this.dateInterval;
-
-    // });
     this.stockService.getMSFT().subscribe( data => {
-      console.log('Success');
+      stockData = data['Monthly Time Series'];
+      this.metaData = data['Meta Data'];
+      // tslint:disable-next-line: forin 
+      for (const item in stockData) {
+        this.dateInterval.push(item);
+        this.stockOpen.push(Number(stockData[item]['1. open']));
+        this.stockClose.push(Number(stockData[item]['4. close']));
+      }
+      this.lineChartLabels = this.dateInterval;
+      this.loadingCharts = false;
+
+    // // });
+    // this.stockService.getMSFT().subscribe( data => {
+      // console.log('Success');
      }
-     ,error => {
+     , error => {
        console.log('error on getMSFT()', error);
-       alert(error.message);
+       this.loadingCharts = false;
      }
      );
   }
